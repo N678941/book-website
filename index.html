@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem;">
+          Book Website</h1>
+        <nav>
+          <button id="navHome">Home</button>
+          <button id="navLogin">Sign In</button>
+          <button id="navDashboard">Dashboard</button>
+          <button id="navLogout" style="display:none;">Logout</button>
+        </nav>
+      </header>
+      <main>
+        <!-- Home Section -->
+        <section id="sectionHome">
+          <div class="hero">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Read, Write, and
+              Explore Books</h2>
+            <p>Discover, comment, and create books. Sign in to add your own!</p>
+          </div>
+          <div class="featured-book">
+            <h3>Featured Book: Lost</h3>
+            <p>Bam! Bam! BAM!!! Jack's cruise ship landed anchor and all engines
+              stopped. Of course l was excited , got lost looking at the
+              penguins
+              for a whole 40 mins and my ship was leaving! ...<br><br>The end
+            </p>
+          </div>
+          <div class="ai-section">
+            <h3>AI Book Helper</h3>
+            <input type="text" id="aiPromptMain"
+              placeholder="Ask AI to help write a book...">
+            <button id="aiBtnMain">Ask AI</button>
+            <div id="aiResponseMain"></div>
+          </div>
+        </section>
+        <!-- Login Section -->
+        <section id="sectionLogin" style="display:none;">
+          <h2>Sign In</h2>
+          <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email"
+              required><br>
+            <input type="password" id="loginPassword" placeholder="Password"
+              required><br>
+            <button type="submit">Sign In</button>
+            <button type="button" id="registerBtn">Register</button>
+          </form>
+          <div id="loginMsg"></div>
+        </section>
+        <!-- Dashboard Section -->
+        <section id="sectionDashboard" style="display:none;">
+          <h2>Dashboard</h2>
+          <button id="addBookBtn">Add Book</button>
+          <div id="booksList"></div>
+          <div class="ai-section">
+            <h3>AI Book Helper</h3>
+            <input type="text" id="aiPromptDash"
+              placeholder="Ask AI to help write a book...">
+            <button id="aiBtnDash">Ask AI</button>
+            <div id="aiResponseDash"></div>
+          </div>
+        </section>
+        <!-- Make Book Section -->
+        <section id="sectionMakeBook" style="display:none;">
+          <h2>Create a Book</h2>
+          <form id="manualBookForm">
+            <input type="text" id="manualBookTitle" placeholder="Book Title"
+              required><br>
+            <input type="text" id="manualBookCover"
+              placeholder="Cover Image URL (optional)"><br>
+            <textarea id="manualBookContent" placeholder="Book Content"
+              required></textarea><br>
+            <button type="submit">Add Book</button>
+          </form>
+          <div id="manualBookMsg"></div>
+          <h3>Or Generate with AI</h3>
+          <input type="text" id="aiBookPrompt"
+            placeholder="Describe your book idea...">
+          <button id="aiBookBtn">Generate Book</button>
+          <div id="aiBookResult"></div>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2026 Book Website</p>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+
+</html>
